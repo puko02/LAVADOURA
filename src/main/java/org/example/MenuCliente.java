@@ -15,9 +15,9 @@ public class MenuCliente {
 
         System.out.println("SERVIÇOS DA QUICK WASH\n");
         System.out.println("SELECIONE O SERVIÇO DESEJADO\n");
-        System.out.print(  "1 - LAVAGEM SIMPLES\n" +
-                           "2 - LAVAGEM COMPLETA\n" +
-                           "3 - POLIMENTO\n" +
+        System.out.print(  "1 - LAVAGEM SIMPLES - R$ 150\n" +
+                           "2 - LAVAGEM COMPLETA - R$ 250\n" +
+                           "3 - POLIMENTO - R$ 100\n" +
                            "4 - VOLTAR\n" +
                            " -> ");
         opc = sc.nextInt();
