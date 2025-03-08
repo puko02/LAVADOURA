@@ -9,7 +9,7 @@ public class Carro {
 	private String cor;
 	private String placa;
 	private String servicoSolicitado;
-	private String status = "Pedido solicitado";
+	public String status = "Pedido solicitado";
 	public static ArrayList<Carro> carros = new ArrayList<>();
 
 

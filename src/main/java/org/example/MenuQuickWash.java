@@ -1,14 +1,13 @@
 package org.example;
-import java.util.ArrayList;
 import java.util.Scanner;
-import org.example.Carro;
 
 public class MenuQuickWash {
 
     public void QuickWash() {
         Scanner sc = new Scanner(System.in);
         Carro Carro = new Carro();
-        Main func = new Main();
+        Main funcM = new Main();
+        Funcionario funcF = new Funcionario();
         int opc;
 
         while (true) { // Loop para manter o menu funcionando
@@ -24,7 +23,7 @@ public class MenuQuickWash {
             switch (opc) {
                 case 1:
                     System.out.println("Lista de carros cadastrados:");
-                    if (Carro.carros == null) {
+                    if (Carro.carros == null || Carro.carros.isEmpty()) {
                         System.out.println("Nenhum carro cadastrado.");
                     } else {
                         for (Carro num : Carro.carros) {
@@ -33,13 +32,13 @@ public class MenuQuickWash {
                     }
                     break;
                 case 2:
-                    // Adicione a lógica para adicionar carros ou manipular a lista aqui
+                    funcF.Funcionario();
                     break;
                 case 3:
                     // Lógica de pagamento
                     break;
                 case 4:
-                    func.menuPrincipal(); // Retorna ao menu principal
+                    funcM.menuPrincipal(); // Retorna ao menu principal
                     return; // Sai do loop e retorna ao menu principal
                 default:
                     System.out.println("Opção inválida. Tente novamente.");

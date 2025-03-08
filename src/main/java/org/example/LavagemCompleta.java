@@ -31,7 +31,7 @@ public class LavagemCompleta extends Servico {
 		if (Carro.compararPlaca(placa, Carro.carros) != null) {
 			System.out.println("Carro já está cadastrado.");
 		} else {
-			Carro.adicionarCarro(marca, modelo, cor, placa, "Lavagem Simples", "Pedido solicitado");
+			Carro.adicionarCarro(marca, modelo, cor, placa, "Lavagem Completa", "Pedido solicitado");
 			System.out.println("Carro cadastrado com sucesso!");
 		}
 
