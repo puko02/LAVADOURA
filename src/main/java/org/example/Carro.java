@@ -1,5 +1,6 @@
 package org.example;
 import java.util.ArrayList;
+import java.lang.String;
 
 public class Carro {
 
@@ -8,23 +9,20 @@ public class Carro {
 	private String cor;
 	private String placa;
 	private String servicoSolicitado;
-	private String status;
+	private String status = "Pedido solicitado";
+	public static ArrayList<Carro> carros = new ArrayList<>();
+
 
 	public Carro() {}
 
-	public Carro(String marca, String modelo, String cor, String placa) {
+	public Carro(String marca, String modelo, String cor, String placa, String servicoSolicitado, String status) {
 		this.marca = marca;
-		this.modelo = modelo;
-		this.cor = cor;
-		this.placa = placa;
-	}
-
-	public Carro(String marca, String modelo, String cor, String placa, String servicoSolicitado) {
 		this.modelo = modelo;
 		this.cor = cor;
 		this.placa = placa;
 		this.servicoSolicitado = servicoSolicitado;
 	}
+
 
 	public String getMarca() {
 		return this.marca;
@@ -58,16 +56,40 @@ public class Carro {
 		this.placa = placa;
 	}
 
-	public static Carro compararPlaca(String placa, ArrayList<Carro> carros){
-		for(Carro num: carros){
-			if(num.getPlaca().equalsIgnoreCase(placa)){ // Ignorar maiúsculas e minúsculas
+	public String getServicoSolicitado() {
+		return this.servicoSolicitado;
+	}
+
+	public void setServicoSolicitado(String servicoSolicitado) {
+		this.servicoSolicitado = servicoSolicitado;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public static Carro compararPlaca(String placa, ArrayList<Carro> carros) {
+		for (Carro num : carros) {
+			if (num.getPlaca().equalsIgnoreCase(placa)) { // Ignorar maiúsculas e minúsculas
 				return num;
 			}
 		}
 		return null;
 	}
 
+
+	public void adicionarCarro(String marca, String modelo, String cor, String placa, String servicoSolicitado, String status){
+		carros.add(new Carro(marca, modelo, cor, placa, servicoSolicitado, status));
+	}
+
 	public String toString() {
-		return String.format("Marca: %s | Modelo: %s | Cor: %s | Placa: %s | Tipo de Lavagem: %s", marca, modelo, cor, placa, servicoSolicitado);
+		return String.format(
+				"Marca: %s | Modelo: %s | Cor: %s | Placa: %s | Tipo de Lavagem: %s | Status: %s",
+				marca, modelo, cor, placa, servicoSolicitado, status
+		);
 	}
 }

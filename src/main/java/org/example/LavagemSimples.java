@@ -1,6 +1,8 @@
 package org.example;
 import java.util.ArrayList;
 import java.util.Scanner;
+import org.example.Carro;
+import java.lang.String;
 
 public class LavagemSimples extends Servico {
 
@@ -12,11 +14,8 @@ public class LavagemSimples extends Servico {
 
 	public void menuLS(){
 		MenuCliente menuCliente = new MenuCliente();
+		Carro Carro = new Carro();
 		Scanner sc = new Scanner(System.in);
-		ArrayList<Carro> carros = new ArrayList<>();
-
-		// Adicionando um carro de teste
-		carros.add(new Carro("Fiat", "Uno", "Azul", "AZB1259", "Lavagem Simples"));
 
 		System.out.println("Qual a marca do seu carro?");
 		String marca = sc.nextLine();
@@ -30,20 +29,22 @@ public class LavagemSimples extends Servico {
 		System.out.println("Qual a placa do seu carro?");
 		String placa = sc.nextLine();
 
-		if(Carro.compararPlaca(placa, carros) != null){
+		if(Carro.compararPlaca(placa, Carro.carros) != null)
+		{
 			System.out.println("Carro já está cadastrado.");
-		}else{
-			carros.add(new Carro(marca, modelo, cor, placa, "Lavagem Simples"));
+		}else{;
+			Carro.adicionarCarro(marca, modelo, cor, placa, "Lavagem Simples", "Pedido solicitado");
 			System.out.println("Carro cadastrado com sucesso!");
 		}
 
 		// Exibir os carros cadastrados de forma organizada
 		System.out.println("Lista de carros cadastrados:");
-		for(Carro carro : carros){
-			System.out.println(carro.toString());
+		for(Carro num : Carro.carros){
+			System.out.println(num.toString());
 		}
 
 		menuCliente.Cliente();
+		return;
 
 	}
 }
