@@ -1,25 +1,19 @@
+package org.example;
 
 public abstract class Servico {
 
 	private double preco;
-	
 	private String descricao;
-	
 
-
-	public Servico() {
-	
-	}
+	public Servico() {}
 
 	public Servico(double preco, String descricao) {
-
 		this.preco = preco;
 		this.descricao = descricao;
-	
 	}
 	
 	public double getPreco(){
-		return this.preco;
+		return preco;
 	}
 	
 	public void setPreco(double preco) {
@@ -27,10 +21,10 @@ public abstract class Servico {
 	}
 	
 	public String getDescricao() {
-		return this.descricao;
+		return descricao;
 	}
 	
-	public String setDescricao(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	

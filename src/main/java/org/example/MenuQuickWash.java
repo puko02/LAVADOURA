@@ -1,4 +1,5 @@
 package org.example;
+import java.util.ArrayList;
 import java.util.Scanner;
 import org.example.Main;
 
@@ -8,6 +9,7 @@ public class MenuQuickWash {
         int opc;
         Scanner sc = new Scanner(System.in);
         Main func = new Main();
+        ArrayList<Carro> carros = new ArrayList<>();
 
         System.out.println("ESCOLHA A OPÇÃO DESEJADA\n");
         System.out.print(  "1 - MENU DE VISUALIZACAO\n" +
@@ -20,6 +22,11 @@ public class MenuQuickWash {
 
         switch (opc){
             case 1:
+                System.out.println("Lista de carros cadastrados:");
+                for(Carro carro : carros){
+                    System.out.println(carro.toString());
+                }
+                QuickWash();
                 break;
             case 2:
                 break;
