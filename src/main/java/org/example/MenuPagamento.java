@@ -15,6 +15,8 @@ public class MenuPagamento {
 
                     if (Carro.carros == null || Carro.carros.isEmpty()) {
                         System.out.println("Nenhum carro cadastrado.");
+                        menuQW.QuickWash();
+                        return;
                     } else {
                         int index = 1; // Variável para numerar os carros, começando do 1
                         for (Carro carro : Carro.carros) {
