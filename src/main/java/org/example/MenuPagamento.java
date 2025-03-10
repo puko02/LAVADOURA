@@ -22,8 +22,10 @@ public class MenuPagamento {
                             index++; // Incrementa o índice
 
                         }
-                        System.out.println("Selecione o veículo que deseja iniciar o processo de pagamento");
-                        System.out.println("Digite 0 para voltar");
+                        System.out.println("\nSelecione o veículo que deseja iniciar o processo de pagamento: ");
+                        System.out.println("Digite 0 para voltar" +
+                                "\n->");
+
                         int carroSelecionado = sc.nextInt();
                         sc.nextLine();
 
@@ -50,10 +52,12 @@ public class MenuPagamento {
 
                                 troco = valorPago - valorDoServico;
 
-                                System.out.println("O pagamento para o : " + carroEscolhido +" foi concluido!"
-                                +"\n Seu Troco foi de: " + troco);
+                                System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
+                                        +" foi concluido!"
+                                        +"\n Seu Troco foi de: " + troco +"\n");
                                 menuQW.QuickWash();
                                 return;
+
                             } else if(carroEscolhido.getServicoSolicitado() == "Lavagem Simples"){
                                 int valorDoServico = 150;
                                 double valorPago;
@@ -66,10 +70,12 @@ public class MenuPagamento {
 
                                 troco = valorPago - valorDoServico;
 
-                                System.out.println("O pagamento para o : " + carroEscolhido +" foi concluido!"
-                                        +"\n Seu Troco foi de: " + troco);
+                                System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
+                                        +" foi concluido!"
+                                        +"\n Seu Troco foi de: " + troco +"\n");
                                 menuQW.QuickWash();
                                 return;
+
                             } else if(carroEscolhido.getServicoSolicitado() == "Polimento"){
                                 int valorDoServico = 100;
                                 double valorPago;
@@ -82,13 +88,14 @@ public class MenuPagamento {
 
                                 troco = valorPago - valorDoServico;
 
-                                System.out.println("O pagamento para o : " + carroEscolhido +" foi concluido!"
-                                        +"\n Seu Troco foi de: " + troco);
+                                System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
+                                        +" foi concluido!"
+                                        +"\n Seu Troco foi de: " + troco +"\n");
                                 menuQW.QuickWash();
                                 return;
                             }
                         } else {
-                            System.out.println("Seleção inválida.");
+                            System.out.println("Opção inválida.");
                         }
                     }
             }
