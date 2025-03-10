@@ -8,6 +8,8 @@ public class MenuQuickWash {
         Carro Carro = new Carro();
         Main funcM = new Main();
         Funcionario funcF = new Funcionario();
+        MenuPagamento funcPAG = new MenuPagamento();
+
         int opc;
 
         while (true) { // Loop para manter o menu funcionando
@@ -35,7 +37,7 @@ public class MenuQuickWash {
                     funcF.Funcionario();
                     break;
                 case 3:
-                    // Lógica de pagamento
+                    funcPAG.Pagamento(); // Lógica de pagamento
                     break;
                 case 4:
                     funcM.menuPrincipal(); // Retorna ao menu principal
