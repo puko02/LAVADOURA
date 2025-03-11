@@ -16,7 +16,7 @@ public class LavagemCompleta extends Servico {
 		Scanner sc = new Scanner(System.in);
 		Carro Carro = new Carro();
 
-		System.out.println("Qual a marca do seu carro?");
+		System.out.println("\n\n\nQual a marca do seu carro?");
 		String marca = sc.nextLine();
 
 		System.out.println("Qual o modelo do seu carro?");
@@ -33,12 +33,6 @@ public class LavagemCompleta extends Servico {
 		} else {
 			Carro.adicionarCarro(marca, modelo, cor, placa, "Lavagem Completa", "Pedido solicitado");
 			System.out.println("Carro cadastrado com sucesso!");
-		}
-
-		// Exibir os carros cadastrados
-		System.out.println("Lista de carros cadastrados:");
-		for (Carro carro : Carro.carros) {
-			System.out.println(carro.toString());
 		}
 
 		menuCliente.Cliente();

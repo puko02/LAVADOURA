@@ -88,7 +88,7 @@ public class Carro {
 
 	public String toString() {
 		return String.format(
-				"Marca: %s | Modelo: %s | Cor: %s | Placa: %s | Tipo de Lavagem: %s | Status: %s",
+				"Marca: %s | Modelo: %s | Cor: %s | Placa: %s | Tipo de Lavagem: %s | Status: %s\n",
 				marca, modelo, cor, placa, servicoSolicitado, status
 		);
 	}

@@ -17,7 +17,7 @@ public class LavagemSimples extends Servico {
 		Carro Carro = new Carro();
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Qual a marca do seu carro?");
+		System.out.println("\n\n\nQual a marca do seu carro?");
 		String marca = sc.nextLine();
 
 		System.out.println("Qual o modelo do seu carro?");
@@ -31,16 +31,10 @@ public class LavagemSimples extends Servico {
 
 		if(Carro.compararPlaca(placa, Carro.carros) != null)
 		{
-			System.out.println("Carro já está cadastrado.");
+			System.out.println("\nCarro já está cadastrado.\n");
 		}else{;
 			Carro.adicionarCarro(marca, modelo, cor, placa, "Lavagem Simples", "Pedido solicitado");
-			System.out.println("Carro cadastrado com sucesso!");
-		}
-
-		// Exibir os carros cadastrados de forma organizada
-		System.out.println("Lista de carros cadastrados:");
-		for(Carro num : Carro.carros){
-			System.out.println(num.toString());
+			System.out.println("\nCarro cadastrado com sucesso!\n");
 		}
 
 		menuCliente.Cliente();

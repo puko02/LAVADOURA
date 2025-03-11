@@ -14,20 +14,19 @@ public class MenuPagamento {
             System.out.println("VEÍCULOS CADASTRADOS");
 
                     if (Carro.carros == null || Carro.carros.isEmpty()) {
-                        System.out.println("Nenhum carro cadastrado.");
+                        System.out.println("\nNenhum carro cadastrado.\n");
                         menuQW.QuickWash();
                         return;
                     } else {
                         int index = 1; // Variável para numerar os carros, começando do 1
                         for (Carro carro : Carro.carros) {
-                            System.out.println("Carro " + index + ": " + carro.toString());
+                            System.out.println("\nCarro " + index + ": " + carro.toString());
                             index++; // Incrementa o índice
 
                         }
                         System.out.println("\nSelecione o veículo que deseja iniciar o processo de pagamento: ");
-                        System.out.println("Digite 0 para voltar" +
-                                "\n->");
-
+                        System.out.println("Digite 0 para voltar" );
+                        System.out.println(" -> ");
                         int carroSelecionado = sc.nextInt();
                         sc.nextLine();
 
@@ -51,22 +50,17 @@ public class MenuPagamento {
                                         + "\n Digite o valor que será pago: ");
                                 valorPago = sc.nextDouble();
                                 sc.nextLine();
-                                if(valorPago > valorDoServico){
+                                if(valorPago >= valorDoServico){
                                     troco = valorPago - valorDoServico;
-                                    System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
+                                    System.out.println("\nO pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
                                                     +" foi concluido!"
                                                     +"\n Seu Troco foi de: R$" + troco
                                                     +"\n Volte Sempre!\n");
-                                    menuQW.QuickWash();
-                                    return;
-                                }else if(valorPago == valorDoServico){
-                                    System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
-                                            +" foi concluido!"
-                                            +"\n Volte Sempre!\n");
+                                    carroEscolhido.setStatus("Pedido Finalizado");
                                     menuQW.QuickWash();
                                     return;
                                 }else {
-                                    System.out.println("O valor Pago é inferior ao valor do serviço, por favor tente novamente.");
+                                    System.out.println("\nO valor Pago é inferior ao valor do serviço, por favor tente novamente.");
                                 }
 
                             } else if(carroEscolhido.getServicoSolicitado().equalsIgnoreCase("Lavagem Simples") && carroEscolhido.getStatus().equalsIgnoreCase("Lavagem concluída")){
@@ -79,18 +73,13 @@ public class MenuPagamento {
                                 valorPago = sc.nextDouble();
                                 sc.nextLine();
 
-                                if(valorPago > valorDoServico){
+                                if(valorPago >= valorDoServico){
                                     troco = valorPago - valorDoServico;
                                     System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
                                             +" foi concluido!"
                                             +"\n Seu Troco foi de: R$" + troco
                                             +"\n Volte Sempre!\n");
-                                    menuQW.QuickWash();
-                                    return;
-                                }else if(valorPago == valorDoServico){
-                                    System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
-                                            +" foi concluido!"
-                                            +"\n Volte Sempre!\n");
+                                    carroEscolhido.setStatus("Pedido Finalizado");
                                     menuQW.QuickWash();
                                     return;
                                 }else {
@@ -107,28 +96,23 @@ public class MenuPagamento {
                                 valorPago = sc.nextDouble();
                                 sc.nextLine();
 
-                                if(valorPago > valorDoServico){
+                                if(valorPago >= valorDoServico){
                                     troco = valorPago - valorDoServico;
                                     System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
                                                     +" foi concluido!"
                                                     +"\n Seu Troco foi de: R$" + troco
                                                     +"\n Volte Sempre!\n");
-                                    menuQW.QuickWash();
-                                    return;
-                                }else if(valorPago == valorDoServico){
-                                    System.out.println("O pagamento para o " + carroEscolhido.getModelo() + " de placa: "+ carroEscolhido.getPlaca()
-                                            +" foi concluido!"
-                                            +"\n Volte Sempre!\n");
+                                    carroEscolhido.setStatus("Pedido Finalizado");
                                     menuQW.QuickWash();
                                     return;
                                 }else {
-                                    System.out.println("O valor Pago é inferior ao valor do serviço, por favor tente novamente.");
+                                    System.out.println("\nO valor Pago é inferior ao valor do serviço, por favor tente novamente.\n");
                                 }
                             }else{
-                                System.out.println("A Lavagem ainda não foi concluída! Volte mais tarde.");
+                                System.out.println("\nA Lavagem ainda não foi concluída! Volte mais tarde.\n");
                             }
                         }else {
-                            System.out.println("Opção inválida.");
+                            System.out.println("\nOpção inválida.\n");
                         }
                     }
             }

@@ -16,7 +16,7 @@ public class Polimento extends Servico {
 		Scanner sc = new Scanner(System.in);
 		Carro Carro = new Carro();
 
-		System.out.println("Qual a marca do seu carro?");
+		System.out.println("\n\n\nQual a marca do seu carro?");
 		String marca = sc.nextLine();
 
 		System.out.println("Qual o modelo do seu carro?");
@@ -29,17 +29,11 @@ public class Polimento extends Servico {
 		String placa = sc.nextLine();
 
 		if(Carro.compararPlaca(placa, Carro.carros) != null){
-			System.out.println("Carro já está cadastrado.");
+			System.out.println("\nCarro já está cadastrado.\n");
 		}else{
 			Carro.adicionarCarro(marca, modelo, cor, placa, "Polimento", "Pedido solicitado");
-			System.out.println("Carro cadastrado com sucesso!");
+			System.out.println("\nCarro cadastrado com sucesso!\n");
 		}
-
-		// Exibir os carros cadastrados de forma organizada
-		//System.out.println("Lista de carros cadastrados:");
-		//for(Carro carro : Carro.carros){
-		//	System.out.println(carro.toString());
-		//}
 
 		menuCliente.Cliente();
 	}

@@ -24,9 +24,9 @@ public class MenuQuickWash {
 
             switch (opc) {
                 case 1:
-                    System.out.println("Lista de carros cadastrados:");
+                    System.out.println("\nLista de carros cadastrados:");
                     if (Carro.carros == null || Carro.carros.isEmpty()) {
-                        System.out.println("Nenhum carro cadastrado.");
+                        System.out.println("\nNenhum carro cadastrado.\n");
                     } else {
                         for (Carro num : Carro.carros) {
                             System.out.println(num.toString());
