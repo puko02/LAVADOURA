@@ -32,9 +32,10 @@ public class Main {
                 break;
             case 3:
                 System.out.println("Saindo...");
+                System.exit(0);
                 return;
             default:
-                return;
+                System.out.println("Opção Inválida!\n");
         }
     }
 
